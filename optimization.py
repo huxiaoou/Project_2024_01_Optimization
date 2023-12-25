@@ -89,9 +89,9 @@ if __name__ == "__main__":
     w0 = np.array([0.2, 0.3, 0.5])
     opt_po = COptimizerPortfolio(m=m0, v=v0)
     p = opt_po.variable_n
-    bounds = [(1 / p / 1.5, 1.5 / p)] * p
-    w_opt_sr, _ = opt_po.optimize_sharpe(bounds=bounds)
-    w_opt_l0, _ = opt_po.optimize_utility(lbd=l0, bounds=bounds)
+    bounds0 = [(1 / p / 1.5, 1.5 / p)] * p
+    w_opt_sr, _ = opt_po.optimize_sharpe(bounds=bounds0)
+    w_opt_l0, _ = opt_po.optimize_utility(lbd=l0, bounds=bounds0)
 
     print("=" * 24)
     print(pd.DataFrame({"raw": w0, "opt_sr": w_opt_sr, "opt_l0": w_opt_l0}))
